@@ -1,9 +1,9 @@
-from schemas.foo import FooItemCreate
-from utils.app_exceptions import AppException
+from ..schemas.foo import FooItemCreate
+from ..utils.app_exceptions import AppException
 
-from services.main import AppService, AppCRUD
-from models.foo import FooItem
-from utils.service_result import ServiceResult
+from ..services.main import AppService, AppCRUD
+from ..models.foo import FooItem
+from ..utils.service_result import ServiceResult
 
 
 class FooService(AppService):

@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends
 
-from services.foo import FooService
-from schemas.foo import FooItem, FooItemCreate
+from ..services.foo import FooService
+from ..schemas.foo import FooItem, FooItemCreate
 
-from utils.service_result import handle_result
+from ..utils.service_result import handle_result
 
-from config.database import get_db
+from ..config.database import get_db
 
 router = APIRouter(
     prefix="/foo",
