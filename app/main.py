@@ -1,7 +1,7 @@
 from .utils.app_exceptions import AppExceptionCase
 from fastapi import FastAPI
 
-from .routers import foo, manager
+from .routers import foo, manager, auth
 from .config.database import create_tables
 
 from fastapi.exceptions import RequestValidationError
@@ -16,7 +16,7 @@ from .utils.app_exceptions import app_exception_handler
 create_tables()
 
 
-app = FastAPI()
+app = FastAPI(title="directUs")
 
 
 @app.exception_handler(StarletteHTTPException)
@@ -34,8 +34,9 @@ async def custom_app_exception_handler(request, e):
     return await app_exception_handler(request, e)
 
 
-app.include_router(foo.router)
+app.include_router(auth.router)
 app.include_router(manager.router)
+app.include_router(foo.router)
 
 
 @app.get("/")

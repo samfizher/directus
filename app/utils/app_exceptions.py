@@ -49,3 +49,27 @@ class AppException(object):
             """
             status_code = 401
             AppExceptionCase.__init__(self, status_code, context)
+
+    class InvalidLogin(AppExceptionCase):
+        def __init__(self, context: dict = None):
+            """
+            Invalid username and/or password
+            """
+            status_code = 401
+            AppExceptionCase.__init__(self, status_code, context)
+
+    class EmailAlreadyExists(AppExceptionCase):
+        def __init__(self, context: dict = None):
+            """
+            Account cant be created because email is already taken
+            """
+            status_code = 409
+            AppExceptionCase.__init__(self, status_code, context)
+
+    class ManagerNotFound(AppExceptionCase):
+        def __init__(self, context: dict = None):
+            """
+            Manager cant be found
+            """
+            status_code = 404
+            AppExceptionCase.__init__(self, status_code, context)

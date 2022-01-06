@@ -2,5 +2,9 @@ uvicorn==0.14.0
 fastapi==0.70.0
 loguru==0.5.3
 SQLAlchemy==1.4.20
-psycopg2
-passlib
+psycopg==3.0
+passlib==1.7.4
+PyJWT==2.2.0
+python-decouple==3.5
+bcrypt==3.2.0
+pydantic[email]
