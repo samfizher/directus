@@ -18,11 +18,3 @@ class Manager(Base):
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
-
-
-    def verify_password(plain_password, hashed_password):
-        return CryptContext(schemes=["bcrypt"], deprecated="auto").verify(plain_password, hashed_password)
-
-
-    def get_password_hash(password):
-        return CryptContext(schemes=["bcrypt"], deprecated="auto").hash(password)

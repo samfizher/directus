@@ -73,3 +73,13 @@ class AppException(object):
             """
             status_code = 404
             AppExceptionCase.__init__(self, status_code, context)
+            
+            
+    class ProjectNotFound(AppExceptionCase):
+        def __init__(self, context: dict = None):
+            """
+            Project cant be found
+            """
+            status_code = 404
+            AppExceptionCase.__init__(self, status_code, context)
+            
