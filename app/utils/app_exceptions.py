@@ -82,4 +82,13 @@ class AppException(object):
             """
             status_code = 404
             AppExceptionCase.__init__(self, status_code, context)
+
+
+    class DepartmentNotFound(AppExceptionCase):
+        def __init__(self, context: dict = None):
+            """
+            Department cant be found
+            """
+            status_code = 404
+            AppExceptionCase.__init__(self, status_code, context)
             
