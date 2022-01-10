@@ -1,7 +1,7 @@
 from .utils.app_exceptions import AppExceptionCase
 from fastapi import FastAPI
 
-from .routers import foo, manager, auth, project, department, crewmember
+from .routers import manager, auth, project, department, crewmember
 from .config.database import create_tables
 
 from fastapi.exceptions import RequestValidationError
@@ -39,7 +39,6 @@ app.include_router(manager.router)
 app.include_router(project.router)
 app.include_router(department.router)
 app.include_router(crewmember.router)
-app.include_router(foo.router)
 
 
 @app.get("/")
