@@ -11,7 +11,7 @@ class DepartmentBase(BaseModel):
 
 class DepartmentCreate(BaseModel):
     name: str
-    description: Optional[str]
+    description: Optional[str] = ""
 
 
 class DepartmentUpdate(BaseModel):
